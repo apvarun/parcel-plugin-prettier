@@ -1,0 +1,23 @@
+{
+  "name": "parcel-plugin-prettier",
+  "version": "0.0.4",
+  "description": "Parcel plugin to add Prettier to your code r",
+  "main": "index.js",
+  "scripts": {
+    "test": "rm -rf .cache && rm -rf dist && node test/index.js"
+  },
+  "author": "apvarun",
+  "license": "MIT",
+  "dependencies": {
+    "jsonfile": "^4.0.0",
+    "mkdirp": "^0.5.1",
+    "prettier": "^1.10.2"
+  },
+  "peerDependencies": {
+    "prettier": "^1.10.2",
+    "parcel-bundler": "^1.6.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.6.2"
+  }
+}

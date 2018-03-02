@@ -1,0 +1,7 @@
+.cache
+dist
+examples
+test
+node_modules
+.gitignore
+*.log
