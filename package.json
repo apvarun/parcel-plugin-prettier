@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-prettier",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "Parcel plugin to add Prettier to your code",
   "main": "index.js",
   "scripts": {
