@@ -1,8 +1,7 @@
 const prettier = require("prettier");
-const { Asset } = require('parcel-bundler');
 const JSONAsset = require('parcel-bundler/src/assets/JSONAsset');
 
-const { writeFile, readFileSync } = require('fs');
+const { writeFile } = require('fs');
 
 class AssetJson extends JSONAsset {
     async load() {
@@ -10,9 +9,10 @@ class AssetJson extends JSONAsset {
         let code = await super.load();
 
         this.encoding = 'utf-8';
-        const file = readFileSync(this.name, this.encoding );
-        var config = Object.assign({},await prettier.resolveConfig(this.name),{parser: "json"});
-        console.log(config);
+        var config = Object.assign({},await prettier.resolveConfig(this.name));
+        
+        config.filepath = this.name;
+        
         var prettierSource = prettier.format(
             code,
             config
