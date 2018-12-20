@@ -26,17 +26,17 @@ async function prettify(source, encoding) {
             code,
             config
         );
+
+        if (prettierSource !== code) {
+            new Promise(() => {
+                writeFile(source, prettierSource, encoding, err => {
+                    if (err) throw err;
+                });
+            })
+        }
     }
     catch(err) {
         //Do nothing
-    }
-
-    if (prettierSource !== code) {
-        new Promise(() => {
-            writeFile(source, prettierSource, encoding, err => {
-                if (err) throw err;
-            });
-        })
     }
 
     return code;
