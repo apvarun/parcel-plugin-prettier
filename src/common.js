@@ -21,10 +21,15 @@ async function prettify(source, encoding) {
 
     config.filepath = source;
 
-    var prettierSource = prettier.format(
-        code,
-        config
-    );
+    try {
+        var prettierSource = await prettier.format(
+            code,
+            config
+        );
+    }
+    catch(err) {
+        //Do nothing
+    }
 
     if (prettierSource !== code) {
         new Promise(() => {
