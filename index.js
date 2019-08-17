@@ -5,14 +5,14 @@ const constFile = require('./src/const');
 mkdirp.sync(constFile.cacheDir);
 
 const PRETTIER_ASSET_EXTENSIONS = {
-    Html:["html"],
-    Js:["js","jsx","ts","tsx"],
-    Css:["css"],
-    Less:["less"],
-    Sass:["scss"],
-    Json:["json"],
-    Graphql:["graphql"]
-}
+    Html: ["html"],
+    Js: ["js", "jsx", "ts", "tsx"],
+    Css: ["css"],
+    Less: ["less"],
+    Sass: ["scss"],
+    Json: ["json"],
+    Graphql: ["graphql"]
+};
 
 module.exports = function (bundler) {
     jsonfile.writeFileSync(constFile.cacheFile, {});
@@ -25,7 +25,7 @@ module.exports = function (bundler) {
 
     bundler.on('bundled', () => {
         let cache;
-        cache={};
+        cache = {};
         try {
             cache = jsonfile.readFileSync(constFile.cacheFile);
         } catch (e) {
@@ -38,7 +38,7 @@ module.exports = function (bundler) {
         cache.log.forEach(element => {
             bundler.logger.write(element);
         });
-        
+
         jsonfile.writeFileSync(constFile.cacheFile, {});
     });
 };
