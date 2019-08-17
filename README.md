@@ -2,7 +2,7 @@
 
 # parcel-plugin-prettier  [![npm version](https://badge.fury.io/js/parcel-plugin-prettier.svg)](https://badge.fury.io/js/parcel-plugin-prettier)
 
-Parcel plugin to add Prettier to your code 
+Parcel plugin to add Prettier to your build. The plugin off-loads the prettifying work to your bundler instead of your code editor/IDE. 
 
 ---
 
@@ -21,6 +21,10 @@ or
 ```
 yarn add parcel-plugin-prettier -D
 ```
+
+## Configuration
+
+The plugin reads the configuration for prettier from the .prettierrc in your root directory and applies the same.
 
 ## License
 
